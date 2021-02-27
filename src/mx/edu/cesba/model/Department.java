@@ -11,7 +11,7 @@ public class Department {
     public String location;
     
     
-    public void getDetails() { //METODO
+    public void getDetails() { 
        
        
        
