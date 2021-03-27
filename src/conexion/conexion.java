@@ -31,7 +31,7 @@ public class conexion {
             String sql = "select * from employee";
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            
+            //primera conexion con la base de datos 27-03-2021
           while(rs.next()){
                 
                 System.out.println(rs.getInt(1));
