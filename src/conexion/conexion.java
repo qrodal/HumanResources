@@ -28,11 +28,12 @@ public class conexion {
             Connection cn = DriverManager.getConnection(url, "root", "root");
             System.out.println("Conectado a la base de datos");
             System.out.println("-----------------------------");
-            String sql = "select * from employee";
+            System.out.println("Generando consulta");
+            String sql = "select * from employees";
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             //primera conexion con la base de datos 27-03-2021
-          while(rs.next()){
+         /* while(rs.next()){
                 
                 System.out.println(rs.getInt(1));
                 System.out.println(rs.getString(2));
@@ -43,8 +44,20 @@ public class conexion {
                 System.out.println(rs.getDouble(7));
                 System.out.println(rs.getString(8));
                 System.out.println("---------------------------");
+            }*/
+while(rs.next()){
+                
+                System.out.println(rs.getInt("id"));
+                System.out.println(rs.getString("firstName"));
+                System.out.println(rs.getString("lastName"));
+                System.out.println(rs.getInt("age"));
+                System.out.println(rs.getString("email"));
+                System.out.println(rs.getString("phoneNumber"));
+                System.out.println(rs.getDouble("salary"));
+                System.out.println(rs.getString("hiredate"));
+                System.out.println("fin de la Consulta");
+                System.out.println("---------------------------");
             }
-
         } catch (Exception e) {
             System.err.println("Sin conexión a la base de datos" + e.getMessage());
             return;
